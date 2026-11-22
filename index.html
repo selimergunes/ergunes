@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ergüneş | A'dan Z'ye Kahve Dünyası</title>
+<meta name="description" content="Ergüneş: taze çekilmiş Türk kahvesi, dibek ve menengiç kahveleri, salep, kış çayı, sirkeler ve kahvaltılıklar. Kahveniz her gün taze çekilir.">
+<link rel="canonical" href="https://selimergunes.github.io/ergunes/">
+<meta name="theme-color" content="#291F1C">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Ergüneş">
+<meta property="og:title" content="Ergüneş | A'dan Z'ye Kahve Dünyası">
+<meta property="og:description" content="Taze çekilmiş kahve, dibek ve menengiç kahveleri, sirkeler ve kahvaltılıklar.">
+<meta property="og:url" content="https://selimergunes.github.io/ergunes/">
+<meta property="og:image" content="https://selimergunes.github.io/ergunes/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Ergüneş",
+  "slogan": "A'dan Z'ye Kahve Dünyası",
+  "description": "Taze çekilmiş Türk kahvesi, dibek ve menengiç kahveleri, salep, kış çayı, sirkeler ve kahvaltılıklar.",
+  "url": "https://selimergunes.github.io/ergunes/",
+  "logo": "https://selimergunes.github.io/ergunes/assets/img/logo.png",
+  "image": "https://selimergunes.github.io/ergunes/assets/img/og.jpg",
+  "foundingDate": "2026-11-09",
+  "address": { "@type": "PostalAddress", "streetAddress": "Hassa Merkez, Hatay Birlik Durağı", "addressLocality": "Hassa", "addressRegion": "Hatay", "addressCountry": "TR" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+@property --r { syntax: '<length>'; inherits: true; initial-value: 0px; }
+
+:root {
+  --espresso: #291F1C;
+  --roast: #362823;
+  --shelf: #1E1613;
+  --gold: #C9A26B;
+  --gold-deep: #9C7442;
+  --paper: #F1E4CC;
+  --paper-dim: #CDBFA8;
+  --sun: #E6B865;
+  --serif: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --sans: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1240px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--espresso); color: var(--paper);
+  font-family: var(--sans); font-size: 17px; line-height: 1.55;
+  font-variation-settings: 'wdth' 100;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--sun); outline-offset: 4px; border-radius: 2px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* header */
+.top {
+  position: fixed; inset: 0 0 auto 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px var(--gutter);
+  transition: background-color .25s ease, padding .25s ease, box-shadow .25s ease;
+}
+/* once the page is scrolled the bar stays on top with a dark backing so the links stay readable */
+.top.solid { background: rgba(28, 20, 17, .92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  padding-top: 10px; padding-bottom: 10px; box-shadow: 0 1px 0 rgba(201,162,107,.18); }
+section[id], .group[id] { scroll-margin-top: 76px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand img { width: 46px; height: 46px; }
+.brand span { font-family: var(--serif); font-weight: 600; font-size: 19px; letter-spacing: .06em; color: var(--gold); }
+.top nav { display: flex; gap: clamp(14px, 3vw, 32px); }
+.top nav a { text-decoration: none; font-size: 15px; color: var(--paper-dim); padding: 6px 0; }
+.top nav a:hover { color: var(--paper); }
+.top nav a.on, .top nav .has-sub.on { color: var(--gold); }
+.menu-btn { all: unset; display: none; align-items: center; gap: 10px; cursor: pointer; padding: 10px 16px; border-radius: 999px;
+  background: var(--gold); color: var(--espresso); font-size: 17px; font-weight: 700; }
+.menu-btn:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+.menu-btn .bars, .menu-btn .bars::before, .menu-btn .bars::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; transition: transform .2s ease, background-color .2s ease; }
+.menu-btn .bars::before, .menu-btn .bars::after { content: ""; position: absolute; left: 0; }
+.menu-btn .bars::before { top: -6px; } .menu-btn .bars::after { top: 6px; }
+/* phones: the menu is a drawer that slides up from the bottom, within thumb reach; sections in three groups, each a large button with a small picture */
+.full-menu { position: fixed; inset: 0; z-index: 40; display: flex; align-items: flex-end; background: rgba(12,8,6,0); transition: background-color .25s ease; }
+.full-menu[hidden] { display: none; }
+.full-menu.open { background: rgba(12,8,6,.62); }
+.sheet { width: 100%; max-height: 88vh; overflow-y: auto; overscroll-behavior: contain; background: #241a16; border-radius: 24px 24px 0 0;
+  padding: 10px var(--gutter) calc(18px + env(safe-area-inset-bottom)); box-shadow: 0 -18px 40px rgba(0,0,0,.5), inset 0 1px 0 rgba(201,162,107,.25);
+  transform: translateY(100%); transition: transform .3s cubic-bezier(.2,.8,.2,1); }
+.full-menu.open .sheet { transform: none; }
+.grip { display: block; width: 44px; height: 5px; border-radius: 3px; background: rgba(201,162,107,.45); margin: 2px auto 12px; }
+.fm-title { margin: 0 0 4px; text-align: center; font-family: var(--serif); font-weight: 600; color: var(--gold); font-size: 20px; }
+.fm-group { margin: 16px 2px 8px; font-size: 14px; font-weight: 600; color: var(--paper-dim); }
+.fm-tiles { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+.fm-tiles a { display: flex; align-items: center; gap: 10px; min-height: 64px; padding: 8px 10px 8px 8px; text-decoration: none; color: var(--paper);
+  background: #30241f; border: 1px solid rgba(201,162,107,.18); border-radius: 16px; font-size: 15.5px; line-height: 1.2; font-weight: 600; }
+.fm-tiles a:active { background: #3a2c25; }
+.fm-tiles a.on { border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); color: var(--gold); }
+.fm-tiles .ph { position: relative; flex: none; width: 46px; height: 46px; border-radius: 50%; overflow: hidden;
+  background: radial-gradient(closest-side, rgba(230,184,101,.4), rgba(230,184,101,0) 80%), #3a2b24; }
+.fm-tiles .ph img { position: absolute; inset: 9%; width: 82% !important; height: 82% !important; object-fit: contain; filter: drop-shadow(0 2px 3px rgba(0,0,0,.5)); }
+.fm-tiles .ph.cover img { inset: 0; width: 100% !important; height: 100% !important; object-fit: cover; filter: none; }
+.sheet-close { all: unset; box-sizing: border-box; display: block; width: 100%; margin-top: 18px; padding: 14px; border-radius: 14px; text-align: center; cursor: pointer;
+  background: var(--gold); color: var(--espresso); font-size: 17px; font-weight: 700; }
+.sheet-close:focus-visible, .fm-tiles a:focus-visible { outline: 2px solid var(--paper); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .sheet, .full-menu { transition: none; } }
+/* "Kahveler" opens a small list of the coffee sections */
+.top nav .has-sub { all: unset; cursor: pointer; font-size: 15px; color: var(--paper-dim); padding: 6px 0; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.top nav .has-sub:hover, .top nav .has-sub[aria-expanded="true"] { color: var(--paper); }
+.top nav .has-sub:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+.caret { width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s ease; }
+.has-sub[aria-expanded="true"] .caret { transform: translateY(1px) rotate(-135deg); }
+.kahve-alt { position: absolute; top: calc(100% - 4px); left: var(--sub-x, auto); min-width: 240px;
+  display: flex; flex-direction: column; padding: 8px 0; border-radius: 10px;
+  background: rgba(28, 20, 17, .97); box-shadow: 0 14px 34px rgba(0,0,0,.45), 0 0 0 1px rgba(201,162,107,.22); }
+.kahve-alt[hidden] { display: none; }
+.kahve-alt a { text-decoration: none; color: var(--paper-dim); font-size: 15px; padding: 10px 18px; white-space: nowrap; }
+.kahve-alt a:hover, .kahve-alt a:focus-visible { color: var(--paper); background: rgba(201,162,107,.12); outline: none; }
+
+/* hero */
+.hero { position: relative; height: min(100svh, 860px); min-height: 560px; overflow: hidden;
+  background: radial-gradient(120% 70% at 50% 78%, #3a2a22 0%, var(--espresso) 60%); }
+.hero { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(20px, 4vh, 40px);
+  padding: 90px 0 clamp(28px, 6vh, 64px) !important; }
+.emblem { position: relative; width: min(68svh, 86vw, 600px); aspect-ratio: 1; border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(201,162,107,.45), 0 0 0 10px rgba(201,162,107,.06), 0 30px 80px -20px rgba(0,0,0,.8), 0 0 120px rgba(226,180,110,.18); }
+.emblem img { width: 100%; height: 100%; border-radius: 50%; }
+.emblem .steam { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; mix-blend-mode: screen; }
+/* steam: three wisps rise from the cup and fade, on a loop */
+.steam .w { opacity: 0; transform-box: view-box; transform-origin: 800px 770px; animation: rise-steam 5.4s ease-in-out infinite; }
+.steam .w2 { animation-delay: 1.8s; }
+.steam .w3 { animation-delay: 3.6s; }
+@keyframes rise-steam {
+  0% { opacity: 0; transform: translateY(40px) scaleY(.7); }
+  22% { opacity: 1; }
+  70% { opacity: .7; }
+  100% { opacity: 0; transform: translateY(-200px) scaleY(1.2) skewX(-6deg); }
+}
+/* opening: the emblem settles in once */
+.js .emblem { opacity: 0; transform: scale(.94); }
+.ready .emblem { animation: emblem-in 1.4s cubic-bezier(.2,.7,.2,1) .15s forwards; }
+@keyframes emblem-in { to { opacity: 1; transform: none; } }
+.hero-copy { text-align: center; }
+.hero-copy p.lede { margin: 0 auto; max-width: 46ch; color: var(--paper-dim); font-size: 17px; }
+.hero-copy p.lede strong { display: block; text-wrap: balance; color: var(--paper); font-size: 1.12em; font-weight: 600; margin-bottom: 6px; }
+.hero-copy p.lede span { display: block; line-height: 1.55; text-wrap: balance; }
+
+/* sections */
+section { padding: clamp(72px, 11vw, 140px) 0; overflow-x: clip; }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 30rem); gap: 16px 48px; align-items: end; margin-bottom: clamp(36px, 6vw, 64px); }
+h2 { font-family: var(--serif); font-weight: 600; color: var(--gold); margin: 0; line-height: 1.05;
+  font-size: clamp(34px, 5.4vw, 68px); letter-spacing: .01em; text-wrap: balance; }
+.head p { margin: 0; color: var(--paper-dim); max-width: 46ch; }
+
+/* house coffee: the shop's own label */
+.cols-2 { --n: 2; --stage: 520px; }
+.cols-2.short { --stage: 420px; }
+.house + .natural, .natural + .tins { padding-top: 0; }
+.other + .lokum, .lokum + .raf { padding-top: 0; }
+
+/* every product gets its own stage: own light, own sun, own bit of shelf */
+.stages { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(20px, 2.6vw, 36px); --cap: 9999px; --n: 3; --g: clamp(20px, 2.6vw, 36px); }
+.stages > .item { flex: 0 0 calc((100% - (var(--n) - 1) * var(--g)) / var(--n)); }
+.cols-3 { --n: 3; }
+.cols-4 { --n: 4; }
+.cols-5 { --n: 5; }
+.item { min-width: 0; }
+.niche { position: relative; height: var(--stage, 420px);
+  display: flex; align-items: flex-end; justify-content: center; padding: 22px 14px var(--stand, 16px); }
+/* quiet backdrop: no frame and no shapes, only a soft edgeless warm light behind the product */
+.niche::before { content: ""; position: absolute; left: 50%; top: 50%; width: 112%; height: 96%; transform: translate(-50%, -52%);
+  background: radial-gradient(closest-side, rgba(236,210,168,.20) 0%, rgba(236,210,168,.10) 48%, rgba(236,210,168,0) 100%); }
+/* a hairline shelf that fades out at both ends */
+.niche::after { content: ""; position: absolute; left: 4%; right: 4%; bottom: calc(var(--stand, 16px) - 1px); height: 1px;
+  background: linear-gradient(to right, rgba(201,162,107,0), rgba(201,162,107,.5) 22%, rgba(201,162,107,.5) 78%, rgba(201,162,107,0)); }
+.niche .print { height: min(calc((var(--stage, 420px) - 70px) * var(--k, 1)), calc(var(--cap) * var(--k, 1))); max-width: var(--mw, 86%); z-index: 1; }
+/* the two house coffees only: the product sits in its own photographed scene instead of on the plain backdrop */
+.stages.scenes { --n: 2; }
+.niche.scene { height: auto; display: block; padding: 0; }
+.niche.scene::before, .niche.scene::after, .niche.scene .print::after { display: none; }
+.niche.scene .print { height: auto; width: 100%; max-width: none; }
+.niche.scene .print img { display: block; object-fit: cover; object-position: center; filter: none; border-radius: 10px; }
+.cols-5 { --stage: 400px; }
+.cols-4 { --stage: 380px; }
+.item .name { margin: 16px 0 0; font-weight: 600; font-variation-settings: 'wdth' 78; font-size: 18px; line-height: 1.2; }
+.item .sub { margin: 2px 0 0; font-size: 14px; color: var(--paper-dim); }
+.price { display: block; margin: 6px 0 0; color: var(--gold); font-weight: 600; font-variation-settings: 'wdth' 90; font-size: 17px; }
+.price.muted { color: #a3907d; font-weight: 400; font-size: 14px; }
+
+/* the printed product */
+.print { position: relative; margin: 0; isolation: isolate; }
+.print img { position: relative; width: 100%; height: 100%; object-fit: contain; object-position: center bottom;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,.45)); }
+.niche .print::after { content: ""; position: absolute; z-index: -1; left: 2%; right: 2%; bottom: -9px; height: 20px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0,0,0,.55), rgba(0,0,0,0)); }
+.niche .print .sun { display: none; }
+.print .sun { position: absolute; z-index: -1; left: 50%; bottom: 0; height: 96%; aspect-ratio: 2 / 1;
+  transform: translateX(-50%); pointer-events: none;
+  background-image:
+    radial-gradient(50% 100% at 50% 100%, transparent calc(74% - 1px), color-mix(in srgb, var(--c) 45%, rgba(201,162,107,.5)) 74%, transparent calc(74% + 1px)),
+    radial-gradient(50% 100% at 50% 100%, color-mix(in srgb, var(--c) 42%, transparent) 0%, color-mix(in srgb, var(--c) 16%, transparent) 46%, transparent 80%);
+  opacity: .8; }
+.paket .print img { filter: drop-shadow(0 12px 12px rgba(60,35,15,.35)); }
+.paket .print .sun { opacity: 1; height: 120%; bottom: -10%; aspect-ratio: 1.7 / 1;
+  background-image: radial-gradient(closest-side, rgba(255,246,226,.6) 0%, rgba(255,246,226,.26) 50%, transparent 100%); }
+
+
+/* pouches */
+.paket { background: var(--gold); color: var(--espresso); }
+.paket h2 { color: var(--espresso); }
+.paket .head p { color: #4a3528; }
+.pouches { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(32px, 5vw, 64px) clamp(24px, 4vw, 56px); }
+.pouch { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: end; justify-items: center; text-align: center; }
+.pouch .print { height: var(--h); justify-self: center; }
+.pouch h3 { margin: 0; font-weight: 700; font-variation-settings: 'wdth' 75; font-size: 22px; line-height: 1.1; }
+.pouch p { margin: 6px 0 0; font-size: 15px; color: #4a3528; }
+.pouch .price { color: var(--espresso); font-size: 20px; margin-top: 10px; }
+.pouch .price.muted { color: #5e4636; }
+.paket :focus-visible { outline-color: var(--espresso); }
+
+/* raf */
+.raf .group + .group, .lokum .group + .group { margin-top: clamp(72px, 10vw, 120px); }
+.raf h3, .lokum h3 { font-family: var(--serif); font-weight: 600; color: var(--paper); font-size: clamp(22px, 2.6vw, 30px); margin: 0 0 28px; }
+
+/* grind note */
+.grind { padding-top: 0; }
+.grind .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px 64px; align-items: center;
+  border-top: 1px solid #4a3a32; padding-top: clamp(56px, 8vw, 96px); }
+.grind p.big { font-weight: 500; font-variation-settings: 'wdth' 88; font-size: clamp(28px, 4.2vw, 56px); line-height: 1.15; letter-spacing: -.01em; max-width: 30ch; margin: 0; color: var(--paper); }
+.grind p.big em { font-style: normal; }
+/* the roasting clip under the house coffees: quiet, silent, no controls */
+.roast { margin-top: clamp(40px, 6vw, 72px); display: flex; align-items: center; justify-content: center; gap: clamp(24px, 5vw, 64px); }
+.roast .clip { margin: 0; width: min(62vw, 300px); flex: none; aspect-ratio: 480 / 758; border-radius: 18px; overflow: hidden;
+  background: #1a120f; box-shadow: 0 24px 50px rgba(0,0,0,.45), 0 0 0 1px rgba(201,162,107,.2); }
+.roast .clip img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.roast-line { margin: 0; font-family: var(--serif); color: var(--gold); font-weight: 600; font-size: clamp(26px, 3.4vw, 44px); line-height: 1.15; max-width: 12ch; }
+@media (max-width: 860px) { .roast { flex-direction: column-reverse; gap: 16px; } .roast-line { max-width: none; text-align: center; } }
+.grind ol { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 18px; }
+.grind li { counter-increment: s; display: grid; grid-template-columns: 2.2em 1fr; color: var(--paper-dim); }
+.grind li::before { content: counter(s); font-family: var(--serif); color: var(--gold); font-size: 22px; line-height: 1.1; }
+.grind li strong { color: var(--paper); font-weight: 600; }
+
+footer { padding: 72px 0 calc(48px + env(safe-area-inset-bottom)); background: var(--shelf); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center; justify-content: space-between; }
+footer .sig { display: flex; align-items: center; gap: 20px; }
+footer .sig img { width: 92px; height: 92px; }
+footer .sig b { display: block; font-family: var(--serif); font-weight: 600; color: var(--gold); font-size: 26px; letter-spacing: .05em; }
+footer .sig span { color: var(--paper-dim); font-size: 15px; }
+footer small { color: #8f7d6c; font-size: 13px; }
+footer .where { font-style: normal; display: grid; gap: 4px; justify-items: start; }
+footer .where .lbl { color: var(--gold); font-size: 14px; font-weight: 600; }
+footer .where .addr { color: var(--paper); font-size: 18px; line-height: 1.4; }
+
+/* mobile */
+@media (max-width: 860px) {
+  .head { grid-template-columns: 1fr; }
+  .stages { --n: 2 !important; --g: 16px; gap: 16px; --stage: 300px !important; --cap: 240px; }
+  .stages > .item:last-child:nth-child(odd) { flex-basis: 100%; }
+  .stages.scenes > .item { flex-basis: 100%; }
+  .niche { --stand: 14px; padding: 16px 10px var(--stand); }
+  .item .name { font-size: 16px; }
+  .pouches { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .pouch { grid-template-columns: 1fr; }
+  .pouch .print { --h: 200px; justify-self: center; }
+  .grind .wrap { grid-template-columns: 1fr; }
+  .top nav { gap: 14px; }
+  .top nav a { font-size: 14px; white-space: nowrap; }
+  .brand img { width: 40px; height: 40px; }
+  .brand span { font-size: 16px; }
+  .hero { height: auto; min-height: 0; padding-top: 84px !important; }
+  .hero-copy p.lede { font-size: 16px; }
+}
+@media (max-width: 420px) {
+  .pouches { gap: 36px 18px; }
+  .pouch h3 { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .emblem { animation: none !important; opacity: 1; transform: none; }
+  .steam .w { animation: none; opacity: 0; }
+  .print { transition: none; }
+}
+/* narrow phones: the five menu links get their own row under the name, spread across the width */
+@media (max-width: 560px) {
+  .top { padding-top: 12px; padding-bottom: 12px; }
+  .top.solid { padding-top: 8px; padding-bottom: 6px; }
+  /* phones: no sliding row; one big "Menü" button opens a full list with large, easy-to-tap lines */
+  .top nav, .kahve-alt { display: none !important; }
+  .menu-btn { display: inline-flex; }
+  .kahve-alt { left: 0; right: 0; top: 100%; border-radius: 0 0 12px 12px; min-width: 0; background: #1c1411; }
+  .kahve-alt a { padding: 12px var(--gutter); }
+  section[id], .group[id] { scroll-margin-top: 80px; }
+  .hero { padding-top: 92px !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#">
+    <span>Ergüneş</span>
+  </a>
+  <nav aria-label="Bölümler">
+    <button type="button" class="has-sub" aria-expanded="false" aria-controls="kahve-alt">Kahveler <span class="caret" aria-hidden="true"></span></button>
+    <a href="#dogal">Nar ekşisi ve pekmez</a>
+    <a href="#lokum">Lokum</a>
+    <a href="#kuru-meyve">Kuru meyve</a>
+    <a href="#raf">Sofra</a>
+    <a href="#baharat">Baharat</a>
+    <a href="#cay">Çay</a>
+  </nav>
+  <button type="button" class="menu-btn" aria-expanded="false" aria-controls="tam-menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Ürünler</span></button>
+  <div class="kahve-alt" id="kahve-alt" hidden>
+    <a href="#ergunes-kahvesi">Türk kahvesi</a>
+    <a href="#kahveler">Kutu kahveler</a>
+    <a href="#paket">Paket kahveler ve salep</a>
+    <a href="#diger-kahveler">Espresso, filtre ve hindiba</a>
+  </div>
+</header>
+<div class="full-menu" id="tam-menu" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <span class="grip" aria-hidden="true"></span>
+    <p class="fm-title" id="sheet-title">Nereye gitmek istersiniz?</p>
+    <p class="fm-group">Kahveler</p>
+    <div class="fm-tiles">
+      <a href="#ergunes-kahvesi"><span class="ph cover"><img src="assets/img/ergunes-orta-sahne.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Türk kahvesi</span></a>
+      <a href="#kahveler"><span class="ph"><img src="assets/img/menengic.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Kutu kahveler</span></a>
+      <a href="#paket"><span class="ph"><img src="assets/img/p_osmanli.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Paket kahve ve salep</span></a>
+      <a href="#diger-kahveler"><span class="ph"><img src="assets/img/h-espresso.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Espresso ve filtre</span></a>
+    </div>
+    <p class="fm-group">Lokum ve kuru meyve</p>
+    <div class="fm-tiles">
+      <a href="#lokum"><span class="ph"><img src="assets/img/lokum-gul.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Lokum</span></a>
+      <a href="#kuru-meyve"><span class="ph"><img src="assets/img/kusuzumu.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Kuru meyve ve sucuk</span></a>
+    </div>
+    <p class="fm-group">Sofra ve mutfak</p>
+    <div class="fm-tiles">
+      <a href="#dogal"><span class="ph"><img src="assets/img/nareksisi.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Nar ekşisi ve pekmez</span></a>
+      <a href="#raf"><span class="ph"><img src="assets/img/alic.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Sirke ve soslar</span></a>
+      <a href="#baharat"><span class="ph"><img src="assets/img/bh-tarcin.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Baharatlar</span></a>
+      <a href="#cay"><span class="ph"><img src="assets/img/kiscay.webp" alt="" loading="lazy" decoding="async"></span><span class="tx">Çay ve kahvaltılık</span></a>
+    </div>
+    <button type="button" class="sheet-close">Kapat</button>
+  </div>
+</div>
+
+<main>
+<section class="hero" aria-labelledby="h1" style="padding:0">
+  <h1 id="h1" class="sr-only">Ergüneş, A'dan Z'ye kahve dünyası</h1>
+  <div class="emblem">
+    <img src="assets/img/hero-logo.webp" width="1000" height="1000" alt="Ergüneş logosu: doğan güneşin önünde buharı tüten bir kahve fincanı">
+    <svg class="steam" viewBox="0 0 1600 1600" aria-hidden="true">
+      <defs>
+        <linearGradient id="vapor" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#F3DDB0" stop-opacity="0"/>
+          <stop offset=".35" stop-color="#FFF0D4" stop-opacity="1"/>
+          <stop offset="1" stop-color="#F3DDB0" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="soft" x="-50%" y="-20%" width="200%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+        <filter id="haze" x="-80%" y="-30%" width="260%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+      </defs>
+      <!-- soft haze around each wisp so the steam reads as a cloud, not a line -->
+      <g filter="url(#haze)" fill="none" stroke="url(#vapor)" stroke-linecap="round" opacity=".5">
+        <path class="w w1" d="M760 770 C 700 690, 820 640, 770 560 C 725 490, 820 440, 780 360" stroke-width="64"/>
+        <path class="w w2" d="M830 770 C 890 700, 780 640, 840 560 C 895 490, 800 430, 850 350" stroke-width="54"/>
+        <path class="w w3" d="M800 770 C 760 700, 860 650, 805 575 C 760 515, 850 470, 810 400" stroke-width="44"/>
+      </g>
+      <g filter="url(#soft)" fill="none" stroke="url(#vapor)" stroke-linecap="round">
+        <path class="w w1" d="M760 770 C 700 690, 820 640, 770 560 C 725 490, 820 440, 780 360" stroke-width="27"/>
+        <path class="w w2" d="M830 770 C 890 700, 780 640, 840 560 C 895 490, 800 430, 850 350" stroke-width="22"/>
+        <path class="w w3" d="M800 770 C 760 700, 860 650, 805 575 C 760 515, 850 470, 810 400" stroke-width="18"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-copy wrap">
+    <p class="lede"><strong>Kahvenizi her gün taze çekiyoruz.</strong>
+      <span>Dibek, menengiç ve yöresel kahveler var.</span>
+      <span>Sirke, baharat, lokum ve çay da bulunur.</span></p>
+  </div>
+</section>
+
+<section id="ergunes-kahvesi" class="house">
+  <div class="wrap">
+    <div class="head">
+      <h2>A’dan Z’ye Türk kahvesi</h2>
+      <p>Dükkanda taze çekilip paketlenen Türk kahvemiz, iki ayrı tonda. Yarım kilo ya da kaç liralık isterseniz söyleyin, o kadarını tartalım.</p>
+    </div>
+    <ul class="stages cols-2 scenes">
+      <li class="item" style="--c:#C9A26B"><div class="niche scene"><figure class="print" style="aspect-ratio:1086/933"><img src="assets/img/ergunes-orta-sahne.webp" width="1086" height="933" alt="Ergüneş orta kahve paketi; yanında fincan, cezve ve kahve çuvalları" loading="lazy" decoding="async"></figure></div><p class="name">Orta kahve</p><p class="sub">İstediğiniz miktarda</p><span class="price">1 kg, 625 ₺</span></li>
+      <li class="item" style="--c:#C9A26B"><div class="niche scene"><figure class="print" style="aspect-ratio:1086/933"><img src="assets/img/ergunes-acik-sahne.webp" width="1086" height="933" alt="Ergüneş açık kahve paketi; yanında fincan, cezve ve kahve çuvalları" loading="lazy" decoding="async"></figure></div><p class="name">Açık kahve</p><p class="sub">İstediğiniz miktarda</p><span class="price">1 kg, 625 ₺</span></li>
+    </ul>
+    <div class="roast">
+      <figure class="clip">
+        <img src="assets/img/kavurma.webp" width="480" height="758" alt="Kahve çekirdekleri kavurma makinesinde dönüyor">
+      </figure>
+      <p class="roast-line">Kahvemizi kendimiz kavuruyoruz.</p>
+    </div>
+  </div>
+</section>
+
+<section id="dogal" class="natural">
+  <div class="wrap">
+    <div class="head">
+      <h2>Pekmez ve nar ekşisi</h2>
+      <p>İkisi de doğal. Cam fanuslardan açıktan veriyoruz; ne kadar isterseniz o kadar.</p>
+    </div>
+    <ul class="stages cols-2">
+<li class="item" style="--c:#9A2A3A"><div class="niche"><figure class="print" style="--h:330px;aspect-ratio:306/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/nareksisi.webp" width="306" height="900" alt="Nar ekşisi" loading="lazy" decoding="async"></figure></div><p class="name">Nar ekşisi</p><p class="sub">Doğal, açıktan</p><span class="price">500 ₺</span></li>
+<li class="item" style="--c:#7A4422"><div class="niche"><figure class="print" style="--h:330px;aspect-ratio:318/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/pekmez.webp" width="318" height="900" alt="Pekmez" loading="lazy" decoding="async"></figure></div><p class="name">Pekmez</p><p class="sub">Doğal, açıktan</p><span class="price">350 ₺</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="kahveler" class="tins">
+  <div class="wrap">
+    <div class="head">
+      <h2>Kutuda altı kahve</h2>
+      <p>Hepsi 120 ₺. Kapalı kutusunda, ilk açılışa kadar tazeliğini koruyor; kendinize de alırsınız, hediye de edersiniz. Altısı da dükkanda rafta sizi bekliyor.</p>
+    </div>
+    <ul class="stages cols-3">
+<li class="item" style="--c:#2E7A63"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:493/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/menengic.webp" width="493" height="900" alt="Menengiç Kahvesi kutusu" loading="lazy" decoding="async"></figure></div><p class="name">Menengiç Kahvesi</p><p class="price">120 ₺</p></li>
+<li class="item" style="--c:#2F55A4"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:484/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/findikli.webp" width="484" height="900" alt="Fındıklı Dibek Kahvesi kutusu" loading="lazy" decoding="async"></figure></div><p class="name">Fındıklı Dibek Kahvesi</p><p class="price">120 ₺</p></li>
+<li class="item" style="--c:#C9262F"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:457/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/kurt.webp" width="457" height="900" alt="Kürt Kahvesi kutusu" loading="lazy" decoding="async"></figure></div><p class="name">Kürt Kahvesi</p><p class="price">120 ₺</p></li>
+<li class="item" style="--c:#B02A45"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:458/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/osmanli.webp" width="458" height="900" alt="Osmanlı Kahvesi kutusu" loading="lazy" decoding="async"></figure></div><p class="name">Osmanlı Kahvesi</p><p class="price">120 ₺</p></li>
+<li class="item" style="--c:#3D7F55"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:486/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/fistikli.webp" width="486" height="900" alt="Fıstıklı Dibek Kahvesi kutusu" loading="lazy" decoding="async"></figure></div><p class="name">Fıstıklı Dibek Kahvesi</p><p class="price">120 ₺</p></li>
+<li class="item" style="--c:#713489"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:458/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/suryani.webp" width="458" height="900" alt="Süryani Kahvesi kutusu" loading="lazy" decoding="async"></figure></div><p class="name">Süryani Kahvesi</p><p class="price">120 ₺</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="grind" aria-label="Kahveniz nasıl çekilir">
+  <div class="wrap">
+    <p class="big">Kahve çekildiği andan itibaren kokusunu kaybetmeye başlar. Bu yüzden sizinkini taze çekiyoruz.</p>
+  </div>
+</section>
+
+<section id="paket" class="paket">
+  <div class="wrap">
+    <div class="head">
+      <h2>Paket kahveler ve salep</h2>
+      <p>Aynı tatlar, evde dolaba sığan paketlerde. Kutu almadan önce denemek için iyi bir başlangıç.</p>
+    </div>
+    <ul class="pouches">
+<li class="pouch" style="--c:#22694F"><figure class="print" style="--h:220px;aspect-ratio:600/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/p_menengic.webp" width="600" height="900" alt="Menengiç Kahvesi paketi" loading="lazy" decoding="async"></figure><div><h3>Menengiç Kahvesi</h3><p>Yabani fıstık meyvesinden</p><span class="price">100 ₺</span></div></li>
+<li class="pouch" style="--c:#A3283A"><figure class="print" style="--h:220px;aspect-ratio:575/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/p_osmanli.webp" width="575" height="900" alt="Osmanlı Kahvesi paketi" loading="lazy" decoding="async"></figure><div><h3>Osmanlı Kahvesi</h3><p>Kakao ve tarçınlı</p><span class="price">100 ₺</span></div></li>
+<li class="pouch" style="--c:#4E7D3A"><figure class="print" style="--h:220px;aspect-ratio:561/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/p_fistikli.webp" width="561" height="900" alt="Fıstıklı Kahve paketi" loading="lazy" decoding="async"></figure><div><h3>Fıstıklı Kahve</h3><p>Fıstık parçacıklı karışım</p><span class="price">100 ₺</span></div></li>
+<li class="pouch" style="--c:#2D5AA8"><figure class="print" style="--h:220px;aspect-ratio:596/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/p_findikli.webp" width="596" height="900" alt="Fındıklı Dibek Kahvesi paketi" loading="lazy" decoding="async"></figure><div><h3>Fındıklı Dibek Kahvesi</h3><p>Fındık ve kakuleli</p><span class="price">100 ₺</span></div></li>
+<li class="pouch" style="--c:#6A3A28"><figure class="print" style="--h:220px;aspect-ratio:510/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/p_dibek.webp" width="510" height="900" alt="Dibek Kahvesi paketi" loading="lazy" decoding="async"></figure><div><h3>Dibek Kahvesi</h3><p>Kakule ve tarçınlı</p><span class="price">100 ₺</span></div></li>
+<li class="pouch" style="--c:#B5452F"><figure class="print" style="--h:220px;aspect-ratio:571/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/p_salep.webp" width="571" height="900" alt="Salep paketi" loading="lazy" decoding="async"></figure><div><h3>Salep</h3><p>Tarçın serpip sıcak için</p><span class="price">80 ₺</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="diger-kahveler" class="other">
+  <div class="wrap">
+    <div class="head">
+      <h2>Espresso, filtre ve hindiba</h2>
+      <p>Makinesi olanlara çekirdek ve filtre kahve, pratik içmek isteyenlere hindiba kahvesi.</p>
+    </div>
+    <ul class="stages cols-4">
+<li class="item" style="--c:#D8A238"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:504/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/h-espresso.webp" width="504" height="900" alt="Espresso kahve çekirdeği" loading="lazy" decoding="async"></figure></div><p class="name">Espresso kahve çekirdeği</p><p class="sub">Minnettar, 500 g</p><span class="price">450 ₺</span></li>
+<li class="item" style="--c:#C9662E"><div class="niche"><figure class="print" style="--h:360px;aspect-ratio:412/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/h-kaffka-filtre.webp" width="412" height="900" alt="Filtre kahve" loading="lazy" decoding="async"></figure></div><p class="name">Filtre kahve</p><p class="sub">Kaffka</p><span class="price">800 ₺</span></li>
+<li class="item" style="--c:#C9A26B"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:568/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/h-hindiba.webp" width="568" height="900" alt="Hindiba kahvesi" loading="lazy" decoding="async"></figure></div><p class="name">Hindiba kahvesi</p><p class="sub">Minnettar, 150 g</p><span class="price">200 ₺</span></li>
+<li class="item" style="--c:#3F7A4E"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:681/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/h-kaffka-menengic.webp" width="681" height="900" alt="Menengiç kahvesi" loading="lazy" decoding="async"></figure></div><p class="name">Menengiç kahvesi</p><p class="sub">Kaffka, 900 g</p><span class="price">350 ₺</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="lokum" class="lokum">
+  <div class="wrap">
+    <div class="head">
+      <h2>Lokum ve kuru meyve</h2>
+      <p>Türk kahvesinin yanında bir lokum, kırk yıllık hatırın en tatlı eşlikçisidir. Fincanınızın yanına gül yapraklısından fıstıklısına bir lokum, ya da bir avuç kuru meyve seçin.</p>
+    </div>
+    <div class="group">
+      <h3>Lokumlar</h3>
+      <ul class="stages cols-3">
+<li class="item" style="--c:#B0507A"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:590/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/lokum-gul.webp" width="590" height="900" alt="Gül yapraklı lokum" loading="lazy" decoding="async"></figure></div><p class="name">Gül yapraklı lokum</p><p class="sub">Hakan Şekerleme</p><span class="price">350 ₺</span></li>
+<li class="item" style="--c:#94AE55"><div class="niche"><figure class="print" style="--h:300px;aspect-ratio:590/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/lokum-fistik-parca.webp" width="590" height="900" alt="Bol fıstıklı lokum" loading="lazy" decoding="async"></figure></div><p class="name">Bol fıstıklı lokum</p><p class="sub">Hakan Şekerleme</p><span class="price">350 ₺</span></li>
+<li class="item" style="--c:#8BAA4E"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:590/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/lokum-sarma.webp" width="590" height="900" alt="Fıstıklı sarma lokum" loading="lazy" decoding="async"></figure></div><p class="name">Fıstıklı sarma lokum</p><p class="sub">Hakan Şekerleme</p><span class="price">350 ₺</span></li>
+<li class="item" style="--c:#7E9B3E"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:590/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/lokum-fistikli.webp" width="590" height="900" alt="Fıstıklı lokum" loading="lazy" decoding="async"></figure></div><p class="name">Fıstıklı lokum</p><p class="sub">Hakan Şekerleme</p><span class="price">350 ₺</span></li>
+<li class="item" style="--c:#A9C98A"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:590/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/lokum-hindistan.webp" width="590" height="900" alt="Hindistan cevizli lokum" loading="lazy" decoding="async"></figure></div><p class="name">Hindistan cevizli lokum</p><p class="sub">Hakan Şekerleme</p><span class="price">170 ₺</span></li>
+<li class="item" style="--c:#C9A26B"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:590/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/lokum-golden.webp" width="590" height="900" alt="Pudra şekerli lokum" loading="lazy" decoding="async"></figure></div><p class="name">Pudra şekerli lokum</p><p class="sub">Hakan Şekerleme</p><span class="price">170 ₺</span></li>
+      </ul>
+    </div>
+    <div class="group" id="kuru-meyve">
+      <h3>Kuru meyve ve cevizli sucuk</h3>
+      <ul class="stages cols-3">
+<li class="item" style="--c:#E39A3B"><div class="niche"><figure class="print" style="--h:330px;aspect-ratio:798/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/kayisi.webp" width="798" height="900" alt="Kuru kayısı" loading="lazy" decoding="async"></figure></div><p class="name">Kuru kayısı</p><p class="sub">Kutuda</p><span class="price">100 ₺</span></li>
+<li class="item" style="--c:#6A3A5A"><div class="niche"><figure class="print" style="--h:330px;aspect-ratio:761/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/kusuzumu.webp" width="761" height="900" alt="Kuş üzümü" loading="lazy" decoding="async"></figure></div><p class="name">Kuş üzümü</p><p class="sub">Açıktan</p><span class="price">450 ₺</span></li>
+<li class="item" style="--c:#B8782E"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:575/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/cevizli-sucuk.webp" width="575" height="900" alt="Cevizli sucuk" loading="lazy" decoding="async"></figure></div><p class="name">Cevizli sucuk</p><p class="sub">Taze, askıdan</p><span class="price">350 ₺</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="raf" class="raf">
+  <div class="wrap">
+    <div class="head">
+      <h2>Sofra ve mutfak</h2>
+    </div>
+
+    <div class="group">
+      <h3>Sirkeler ve soslar</h3>
+      <ul class="stages cols-3">
+<li class="item" style="--c:#D99A1E"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:209/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/alic.webp" width="209" height="900" alt="Alıç sirkesi" loading="lazy" decoding="async"></figure></div><p class="name">Alıç sirkesi</p><p class="sub">Nahita, 500 ml</p><span class="price">130 ₺</span></li>
+<li class="item" style="--c:#C8302B"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:202/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/elma.webp" width="202" height="900" alt="Elma sirkesi" loading="lazy" decoding="async"></figure></div><p class="name">Elma sirkesi</p><p class="sub">Nahita, 500 ml</p><span class="price">130 ₺</span></li>
+<li class="item" style="--c:#C9962A"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:204/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/ananas.webp" width="204" height="900" alt="Ananas sirkesi" loading="lazy" decoding="async"></figure></div><p class="name">Ananas sirkesi</p><p class="sub">Nahita, 500 ml</p><span class="price">130 ₺</span></li>
+<li class="item" style="--c:#7A2440"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:208/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/uzum.webp" width="208" height="900" alt="Üzüm sirkesi" loading="lazy" decoding="async"></figure></div><p class="name">Üzüm sirkesi</p><p class="sub">Nahita, 500 ml</p><span class="price">130 ₺</span></li>
+<li class="item" style="--c:#D23A3A"><div class="niche"><figure class="print" style="--h:340px;aspect-ratio:226/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/ege.webp" width="226" height="900" alt="Üzüm sirkesi" loading="lazy" decoding="async"></figure></div><p class="name">Üzüm sirkesi</p><p class="sub">750 ml, Ege Bağları</p><span class="price">100 ₺</span></li>
+<li class="item" style="--c:#7FA650"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:249/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/beyaz-sirke.webp" width="249" height="900" alt="Beyaz sirke" loading="lazy" decoding="async"></figure></div><p class="name">Beyaz sirke</p><p class="sub">Ferfresh, 1 lt</p><span class="price">80 ₺</span></li>
+<li class="item" style="--c:#B8323A"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:207/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/salata.webp" width="207" height="900" alt="Salata sosu" loading="lazy" decoding="async"></figure></div><p class="name">Salata sosu</p><p class="sub">Sıra</p><span class="price">90 ₺</span></li>
+<li class="item" style="--c:#6A3F9A"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:371/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/sumak.webp" width="371" height="900" alt="Sumak ekşili lezzet sosu" loading="lazy" decoding="async"></figure></div><p class="name">Sumak ekşili lezzet sosu</p><p class="sub">Natte</p><span class="price">150 ₺</span></li>
+<li class="item" style="--c:#8A5A3A"><div class="niche"><figure class="print" style="--h:320px;aspect-ratio:209/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/keciboynuzu.webp" width="209" height="900" alt="Keçiboynuzu özü" loading="lazy" decoding="async"></figure></div><p class="name">Keçiboynuzu özü</p><p class="sub">Mercan Hanım</p><span class="price">120 ₺</span></li>
+    </ul>
+    </div>
+
+    <div class="group" id="baharat">
+      <h3>Baharatlar</h3>
+      <ul class="stages cols-4">
+<li class="item" style="--c:#9A5A30"><div class="niche"><figure class="print" style="--h:300px;aspect-ratio:722/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/bh-tarcin.webp" width="722" height="900" alt="Çubuk tarçın" loading="lazy" decoding="async"></figure></div><p class="name">Çubuk tarçın</p><p class="sub">Açıktan</p><span class="price">400 ₺</span></li>
+<li class="item" style="--c:#C9A66B"><div class="niche"><figure class="print" style="--h:300px;aspect-ratio:788/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/bh-zencefil.webp" width="788" height="900" alt="Zencefil" loading="lazy" decoding="async"></figure></div><p class="name">Zencefil</p><p class="sub">Toz, açıktan</p><span class="price">300 ₺</span></li>
+<li class="item" style="--c:#7A6448"><div class="niche"><figure class="print" style="--h:300px;aspect-ratio:743/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/bh-kimyon-tane.webp" width="743" height="900" alt="Tane kimyon" loading="lazy" decoding="async"></figure></div><p class="name">Tane kimyon</p><p class="sub">Açıktan</p><span class="price">300 ₺</span></li>
+<li class="item" style="--c:#D9A21E"><div class="niche"><figure class="print" style="--h:300px;aspect-ratio:772/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/bh-zerdecal.webp" width="772" height="900" alt="Zerdeçal" loading="lazy" decoding="async"></figure></div><p class="name">Zerdeçal</p><p class="sub">Toz, açıktan</p><span class="price">200 ₺</span></li>
+<li class="item" style="--c:#8E7A3E"><div class="niche"><figure class="print" style="--h:300px;aspect-ratio:757/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/bh-kimyon-toz.webp" width="757" height="900" alt="Toz kimyon" loading="lazy" decoding="async"></figure></div><p class="name">Toz kimyon</p><p class="sub">Açıktan</p><span class="price">300 ₺</span></li>
+<li class="item" style="--c:#4A4642"><div class="niche"><figure class="print" style="--h:300px;aspect-ratio:750/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/bh-karabiber.webp" width="750" height="900" alt="Karabiber" loading="lazy" decoding="async"></figure></div><p class="name">Karabiber</p><p class="sub">Açıktan</p><span class="price">450 ₺</span></li>
+<li class="item" style="--c:#D8D4CC"><div class="niche"><figure class="print" style="--h:300px;aspect-ratio:748/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/bh-limontuzu.webp" width="748" height="900" alt="Limon tuzu" loading="lazy" decoding="async"></figure></div><p class="name">Limon tuzu</p><p class="sub">Açıktan</p><span class="price">140 ₺</span></li>
+      </ul>
+    </div>
+
+    <div class="group" id="cay">
+      <h3>Çay ve kahvaltılık</h3>
+      <ul class="stages cols-3">
+<li class="item" style="--c:#2F7A3A"><div class="niche"><figure class="print" style="--k:1.094;--mw:96%;--h:330px;aspect-ratio:454/832"><span class="sun" aria-hidden="true"></span><img src="assets/img/kiscay.webp" width="454" height="832" alt="Sultan kış çayı" loading="lazy" decoding="async"></figure></div><p class="name">Sultan kış çayı</p><p class="sub">Esila, portakallı bitki çayı</p><span class="price">85 ₺</span></li>
+<li class="item" style="--c:#C8302B"><div class="niche"><figure class="print" style="--k:1.05;--mw:90.8%;--h:280px;aspect-ratio:794/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/atom-kutu.webp" width="794" height="900" alt="Atom çayı" loading="lazy" decoding="async"></figure></div><p class="name">Atom çayı</p><p class="sub">Ziya Dede, kutu</p><span class="price">75 ₺</span></li>
+<li class="item" style="--c:#B8402E"><div class="niche"><figure class="print" style="--k:0.998;--mw:96%;--h:270px;aspect-ratio:641/895"><span class="sun" aria-hidden="true"></span><img src="assets/img/atom-kavanoz.webp" width="641" height="895" alt="Atom çayı" loading="lazy" decoding="async"></figure></div><p class="name">Atom çayı</p><p class="sub">Ziya Dede, kavanoz</p><span class="price">90 ₺</span></li>
+<li class="item" style="--c:#6FA046"><div class="niche"><figure class="print" style="--k:0.998;--mw:96%;--h:270px;aspect-ratio:641/895"><span class="sun" aria-hidden="true"></span><img src="assets/img/nane-limon.webp" width="641" height="895" alt="Nane limon melisa" loading="lazy" decoding="async"></figure></div><p class="name">Nane limon melisa</p><p class="sub">Ziya Dede, kavanoz</p><span class="price">90 ₺</span></li>
+<li class="item" style="--c:#C2262B"><div class="niche"><figure class="print" style="--k:0.975;--mw:96%;--h:320px;aspect-ratio:524/875"><span class="sun" aria-hidden="true"></span><img src="assets/img/zahter.webp" width="524" height="875" alt="Zahter" loading="lazy" decoding="async"></figure></div><p class="name">Zahter</p><p class="sub">Sıra, 250 g</p><span class="price">75 ₺</span></li>
+<li class="item" style="--c:#B8862E"><div class="niche"><figure class="print" style="--h:240px;aspect-ratio:715/900"><span class="sun" aria-hidden="true"></span><img src="assets/img/cerez.webp" width="715" height="900" alt="Çerez tatlısı" loading="lazy" decoding="async"></figure></div><p class="name">Çerez tatlısı</p><p class="sub">Kavanozda, çerezli</p><span class="price">150 ₺</span></li>
+    </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="sig">
+      <div><b>Ergüneş</b><span>A'dan Z'ye kahve dünyası</span></div>
+    </div>
+    <address class="where">
+      <span class="lbl">Adresimiz</span>
+      <span class="addr">Hassa Merkez, Hatay Birlik Durağı<br>Hassa / Hatay</span>
+    </address>
+    <!-- Telefon ve çalışma saatleri hazır olduğunda buraya eklenecek -->
+    <small>9 Kasım 2026'dan beri açık.</small>
+  </div>
+</footer>
+
+
+<script>
+/* hero: start the writing animation once the logo-style font is ready */
+(() => {
+  const root = document.documentElement;
+  const go = () => root.classList.add('ready');
+  if (document.fonts && document.fonts.load) {
+    Promise.race([document.fonts.load('600 19px Cinzel', 'Ergüneş'), new Promise(r => setTimeout(r, 800))]).then(go, go);
+  } else go();
+})();
+
+/* Kahveler list: hover opens it on a computer, tap opens and closes it on a phone */
+(() => {
+  const btn = document.querySelector('.has-sub'), sub = document.getElementById('kahve-alt'), bar = document.querySelector('.top');
+  const hoverable = window.matchMedia('(hover: hover) and (min-width: 561px)');
+  let t;
+  const place = () => { if (hoverable.matches) bar.style.setProperty('--sub-x', (btn.getBoundingClientRect().left - 18) + 'px'); };
+  const open = () => { clearTimeout(t); place(); sub.hidden = false; btn.setAttribute('aria-expanded', 'true'); };
+  const close = () => { sub.hidden = true; btn.setAttribute('aria-expanded', 'false'); };
+  btn.addEventListener('click', e => { e.stopPropagation(); sub.hidden ? open() : close(); });
+  [btn, sub].forEach(el => {
+    el.addEventListener('mouseenter', () => { if (hoverable.matches) open(); });
+    el.addEventListener('mouseleave', () => { if (hoverable.matches) t = setTimeout(close, 180); });
+  });
+  sub.addEventListener('click', e => { if (e.target.closest('a')) close(); });
+  document.addEventListener('click', e => { if (!sub.hidden && !sub.contains(e.target)) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !sub.hidden) { close(); btn.focus(); } });
+  window.addEventListener('resize', () => { if (!sub.hidden) place(); });
+})();
+/* phones: Menü opens the drawer; a tile, Kapat, the dark area or Esc closes it */
+(() => {
+  const btn = document.querySelector('.menu-btn'), list = document.getElementById('tam-menu'), bar = document.querySelector('.top');
+  const links = [...list.querySelectorAll('.fm-tiles a')], closeBtn = list.querySelector('.sheet-close'), sheet = list.querySelector('.sheet');
+  let tm;
+  const mark = () => {
+    const line = bar.getBoundingClientRect().bottom + 40; let on = null, best = -Infinity;
+    for (const a of links) { const el = document.querySelector(a.getAttribute('href')); if (!el) continue;
+      const top = el.getBoundingClientRect().top; if (top <= line && top > best) { best = top; on = a; } }
+    links.forEach(a => a.classList.toggle('on', a === on));
+  };
+  const open = () => { clearTimeout(tm); mark(); list.hidden = false; requestAnimationFrame(() => requestAnimationFrame(() => list.classList.add('open')));
+    btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; setTimeout(() => closeBtn.focus({ preventScroll: true }), 320); };
+  const close = (back) => { list.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+    tm = setTimeout(() => { list.hidden = true; }, 300); if (back) btn.focus(); };
+  btn.addEventListener('click', open);
+  closeBtn.addEventListener('click', () => close(true));
+  list.addEventListener('click', e => { if (e.target.closest('.fm-tiles a')) close(); else if (!sheet.contains(e.target)) close(true); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !list.hidden) close(true); });
+})();
+/* light up the tab for the part of the page in view; on phones slide that tab into sight */
+(() => {
+  const nav = document.querySelector('.top nav'), bar = document.querySelector('.top');
+  const kahve = nav.querySelector('.has-sub');
+  const map = [['ergunes-kahvesi', kahve], ['dogal', nav.querySelector('a[href="#dogal"]')], ['kahveler', kahve], ['paket', kahve], ['diger-kahveler', kahve],
+               ['lokum', nav.querySelector('a[href="#lokum"]')], ['kuru-meyve', nav.querySelector('a[href="#kuru-meyve"]')], ['raf', nav.querySelector('a[href="#raf"]')],
+               ['baharat', nav.querySelector('a[href="#baharat"]')], ['cay', nav.querySelector('a[href="#cay"]')]]
+    .map(([id, tab]) => [document.getElementById(id), tab]).filter(([el, tab]) => el && tab);
+  let cur = null, raf = 0;
+  const update = () => {
+    raf = 0; const line = bar.getBoundingClientRect().bottom + 40; let tab = null;
+    for (const [el, t] of map) if (el.getBoundingClientRect().top <= line) tab = t;
+    if (tab === cur) return;
+    if (cur) cur.classList.remove('on'); cur = tab;
+    if (!tab) return;
+    tab.classList.add('on');
+    if (nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: tab.offsetLeft - (nav.clientWidth - tab.offsetWidth) / 2 });
+  };
+  window.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+  update();
+})();
+/* menu: stays on top; gets its dark backing after the first bit of scrolling */
+(() => {
+  const bar = document.querySelector('.top');
+  const set = () => bar.classList.toggle('solid', window.scrollY > 40);
+  set(); window.addEventListener('scroll', set, { passive: true });
+})();
+</script>
+</body>
+</html>
